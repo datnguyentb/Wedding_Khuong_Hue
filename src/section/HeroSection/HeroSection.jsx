@@ -21,7 +21,7 @@ function HeroSection() {
                     </div>
                 </div>
                 <h1 className={cx('couple-names')}>
-                    <span className={cx('groom')}>Anh Khương</span>
+                    <span className={cx('groom')}>Văn Khương</span>
                     <span className={cx('ampersand')}>&</span>
                     <span className={cx('bride')}>Thu Huế</span>
                 </h1>

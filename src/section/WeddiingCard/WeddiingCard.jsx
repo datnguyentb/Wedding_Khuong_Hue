@@ -62,7 +62,7 @@ function WeddiingCard({ setIsPlaying }) {
                     <div className={cx('cover-card-content')}>
                         <div className={cx('heart-icon-circle')}>❤️</div>
                         <h2 className={cx('cover-names')}>
-                            Anh Khương
+                            Văn Khương
                             <br />
                             <span className={cx('ampersand')}>&</span>
                             <br />

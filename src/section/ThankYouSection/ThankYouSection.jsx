@@ -15,7 +15,7 @@ export const ThankYouSection = () => {
                 </p>
                 <h2 className={cx('thank-you-title')}>Cảm Ơn & Trân Trọng !</h2>
                 <div className={cx('thank-you-names')}>
-                    <span>Anh Khương</span>
+                    <span>Văn Khương</span>
                     <span className={cx('heart-icon')}>❤️</span>
                     <span>Thu Huế</span>
                 </div>
