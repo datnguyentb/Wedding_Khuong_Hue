@@ -9,6 +9,29 @@ const APPSCRIPT_URL =
 
 const SCROLL_SPEED = 0.3; // Tốc độ cuộn
 
+const RANDOM_WISHES = [
+    'Chúc hai bạn trăm năm hạnh phúc, cuộc sống mới ngập tràn tiếng cười và niềm vui! 🥂',
+    'Thuyền đã cập bến, chúc hai vợ chồng có một hành trình mới thật bình an và viên mãn! ⚓️❤️',
+    'Chúc tình yêu của hai bạn luôn bền chặt theo năm tháng, cùng nhau nắm tay đi đến cuối con đường. 🌸',
+    'Hạnh phúc đơn giản là tìm được đúng người. Chúc hai bạn mãi giữ được ngọn lửa tình yêu như ngày đầu! 🔥',
+    'Chúc gia đình nhỏ của hai bạn luôn tràn đầy yêu thương, hạnh phúc và tài lộc đong đầy! 💰✨',
+    'Chúc mừng ngày trọng đại! Mong rằng mỗi ngày trôi qua với hai bạn đều là một ngày tuyệt vời. 🌟',
+    'Đồng hành cùng nhau qua bao thử thách, cuối cùng cũng đến ngày hạnh phúc này. Chúc hai bạn mãi hạnh phúc! 💍',
+    'Chúc hai bạn một đời an yên, thương lượng và nhường nhịn nhau để xây dựng tổ ấm vững chắc. 🏡',
+    'Nguyện xin chúa/phật ban phước lành cho tình yêu và cuộc hôn nhân của hai bạn luôn ngập tràn ánh sáng. ✨',
+    'Chúc cô dâu chú rể luôn trẻ trung, yêu đời và mãi ngọt ngào như những ngày mới yêu! 🥰',
+    'Mỗi khoảnh khắc bên nhau đều là món quà quý giá. Chúc hai bạn có một đời an khang thịnh vượng bên nhau. 🎁',
+    'Chúc cho tình yêu của hai bạn sẽ là nguồn cảm hứng cho tất cả mọi người xung quanh! 💖',
+    'Trăm năm tình viên mãn, bạc đầu nghĩa phu thê. Chúc mừng hạnh phúc hai bạn! 🕊️',
+    'Chúc tổ ấm mới của hai bạn lúc nào cũng rộn rã tiếng cười và ngập tràn hương vị ngọt ngào của tình yêu. 🌷',
+    'Mong rằng những bước đường tiếp theo của hai bạn sẽ luôn có nhau che chở, đồng cam cộng khổ. 🤝',
+    'Chúc mừng hai bạn đã chính thức bước sang chương mới của cuộc đời với thật nhiều điều tốt đẹp! 📖✨',
+    'Yêu là cùng nhau nhìn về một hướng. Chúc hai bạn luôn chung sức chung lòng vun đắp tương lai. 🌅',
+    'Chúc hai bạn sức khỏe dồi dào, sự nghiệp thăng tiến và tình yêu thì ngày càng thắm thiết! 🥂',
+    'Một cái kết viên mãn cho mối tình đẹp. Chúc hai bạn sớm có thêm thành viên mới đầy kháu khỉnh nhé! 👶❤️',
+    'Chúc mừng ngày hạnh phúc nhất. Mong hai bạn mãi giữ được sự bao dung và thấu hiểu dành cho nhau. 💫',
+];
+
 export const WishSection = () => {
     const [wishes, setWishes] = useState([]);
     const [name, setName] = useState('');
@@ -96,6 +119,12 @@ export const WishSection = () => {
     // Gợi ý nhanh
     const handleQuickSuggest = (text) => {
         setMessage(text);
+    };
+
+    // Lời chúc ngẫu nhiên
+    const handleRandomSuggest = () => {
+        const randomIndex = Math.floor(Math.random() * RANDOM_WISHES.length);
+        setMessage(RANDOM_WISHES[randomIndex]);
     };
 
     // Gửi lời chúc mới
@@ -197,6 +226,13 @@ export const WishSection = () => {
                             }
                         >
                             Tình yêu đong đầy
+                        </button>
+                        <button
+                            type="button"
+                            className={cx('suggest-btn', 'suggest-btn-random')}
+                            onClick={handleRandomSuggest}
+                        >
+                            🎲 Lời chúc ngẫu nhiên
                         </button>
                     </div>
                 </div>
