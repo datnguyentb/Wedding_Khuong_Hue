@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './InvitationSection.module.scss';
-import Line from '../../components/line/line.jsx';
+import Line from '../../components/Line';
 
 // Import hình ảnh từ thư mục assets
 import chuReImg from '../../assets/images/chu_re.jpg';
