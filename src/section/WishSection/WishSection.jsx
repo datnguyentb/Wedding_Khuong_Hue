@@ -50,19 +50,7 @@ export const WishSection = () => {
             const result = await res.json();
 
             if (result.success && result.data && result.data.length > 0) {
-                setWishes((prevWishes) => {
-                    // Lọc bỏ các item đã tồn tại để tránh trùng lặp/tăng ảo
-                    const existingKeys = new Set(prevWishes.map((w) => `${w.time}_${w.name}_${w.message}`));
-                    const newItems = result.data.filter(
-                        (item) => !existingKeys.has(`${item.time}_${item.name}_${item.message}`),
-                    );
-
-                    if (newItems.length === 0 && prevWishes.length > 0) return prevWishes;
-
-                    // Kết hợp dữ liệu mới và cũ, giới hạn tối đa 30 item
-                    const updatedList = [...newItems, ...prevWishes];
-                    return updatedList.slice(0, 30);
-                });
+                setWishes(result.data.slice(0, 30));
             }
         } catch (err) {
             console.error('Lỗi tải lời chúc:', err);
@@ -142,14 +130,6 @@ export const WishSection = () => {
 
         setIsSubmitting(true);
 
-        // Hiển thị tạm thời ngay lập tức lên UI
-        const tempTime = new Date().toLocaleString('vi-VN', { hour12: false });
-        const newWish = { time: tempTime, name: trimmedName, message: trimmedMsg };
-
-        setWishes((prev) => [newWish, ...prev].slice(0, 30));
-        setName('');
-        setMessage('');
-
         // Gửi ngầm lên Google AppScript
         try {
             const formData = new URLSearchParams();
@@ -161,8 +141,12 @@ export const WishSection = () => {
                 body: formData,
             });
 
-            setTimeout(loadWishes, 1000);
+            setName('');
+            setMessage('');
             setShowSuccessModal(true);
+
+            // Tải lại danh sách ngay lập tức từ Google Sheets
+            loadWishes();
         } catch (err) {
             alert('❌ Lỗi gửi lời chúc: ' + err.message);
         } finally {
