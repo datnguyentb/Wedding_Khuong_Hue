@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import classNames from 'classnames/bind';
 import styles from './WishSection.module.scss';
 
@@ -14,50 +14,47 @@ export const WishSection = () => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [latestTime, setLatestTime] = useState('');
-    const [showSuccessModal, setShowSuccessModal] = useState(false); // State quản lý pop-up
+    const [showSuccessModal, setShowSuccessModal] = useState(false);
 
     const wishScrollRef = useRef(null);
     const scrollPosRef = useRef(0);
     const animFrameRef = useRef(null);
 
-    // === 1. Tải danh sách lời chúc ban đầu ===
-    const initialLoad = async () => {
+    // === 1. Tải danh sách lời chúc từ Google Sheets ===
+    const loadWishes = async () => {
         try {
             const res = await fetch(`${APPSCRIPT_URL}?t=${Date.now()}`);
             const result = await res.json();
 
             if (result.success && result.data && result.data.length > 0) {
-                setWishes(result.data);
-                setLatestTime(result.data[0].time);
+                setWishes((prevWishes) => {
+                    // Lọc bỏ các item đã tồn tại để tránh trùng lặp/tăng ảo
+                    const existingKeys = new Set(prevWishes.map((w) => `${w.time}_${w.name}_${w.message}`));
+                    const newItems = result.data.filter(
+                        (item) => !existingKeys.has(`${item.time}_${item.name}_${item.message}`),
+                    );
+
+                    if (newItems.length === 0 && prevWishes.length > 0) return prevWishes;
+
+                    // Kết hợp dữ liệu mới và cũ, giới hạn tối đa 30 item
+                    const updatedList = [...newItems, ...prevWishes];
+                    return updatedList.slice(0, 30);
+                });
             }
         } catch (err) {
-            console.error('Lỗi tải lời chúc ban đầu:', err);
+            console.error('Lỗi tải lời chúc:', err);
         }
     };
 
-    // === 2. Tải lời chúc mới định kỳ (mỗi 30s) ===
-    const loadWishes = async () => {
-        try {
-            const res = await fetch(`${APPSCRIPT_URL}?t=${Date.now()}`);
-            const result = await res.json();
-            if (!result.success || !result.data) return;
-
-            setWishes((prevWishes) => {
-                const newItems = result.data.filter((item) => !latestTime || item.time > latestTime);
-                if (newItems.length === 0) return prevWishes;
-
-                setLatestTime(result.data[0].time);
-                const updatedList = [...newItems, ...prevWishes];
-                return updatedList.slice(0, 30);
-            });
-        } catch (err) {
-            console.error('Lỗi tải lời chúc mới:', err);
-        }
-    };
-
-    // === 3. Hiệu ứng cuộn mượt bằng JavaScript cho iOS/Safari ===
+    // === 2. Hiệu ứng cuộn mượt (Chỉ chạy khi có từ 10 lời chúc trở lên) ===
     useEffect(() => {
+        if (wishes.length < 10) {
+            if (wishScrollRef.current) {
+                wishScrollRef.current.style.transform = 'translateY(0px)';
+            }
+            return;
+        }
+
         let lastTime = performance.now();
 
         const step = (now) => {
@@ -87,11 +84,11 @@ export const WishSection = () => {
                 cancelAnimationFrame(animFrameRef.current);
             }
         };
-    }, [wishes]);
+    }, [wishes.length]);
 
-    // === 4. Khởi chạy khi component mounted ===
+    // === 3. Khởi chạy khi component mounted ===
     useEffect(() => {
-        initialLoad();
+        loadWishes();
         const interval = setInterval(loadWishes, 30000);
         return () => clearInterval(interval);
     }, []);
@@ -135,8 +132,8 @@ export const WishSection = () => {
                 body: formData,
             });
 
-            setTimeout(loadWishes, 500);
-            setShowSuccessModal(true); // Bật pop-up thành công thay cho alert
+            setTimeout(loadWishes, 1000);
+            setShowSuccessModal(true);
         } catch (err) {
             alert('❌ Lỗi gửi lời chúc: ' + err.message);
         } finally {
@@ -144,8 +141,8 @@ export const WishSection = () => {
         }
     };
 
-    // Nhân bản danh sách 2 lần để cuộn lặp mượt mà
-    const displayWishes = [...wishes, ...wishes];
+    // Chỉ nhân bản danh sách để cuộn vòng tròn khi có từ 10 lời chúc trở lên
+    const displayWishes = wishes.length >= 10 ? [...wishes, ...wishes] : wishes;
 
     return (
         <section className={cx('wish-section', 'scroll-reveal')}>
