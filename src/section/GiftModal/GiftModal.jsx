@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './GiftModal.module.scss';
 
+// Import hình ảnh từ thư mục assets
+import giftImg from '../../assets/images/gift.png';
+import qrGroomImg from '../../assets/images/qr.jpg';
+
 const cx = classNames.bind(styles);
 
 export const GiftModal = ({ downloadQR }) => {
@@ -27,7 +31,7 @@ export const GiftModal = ({ downloadQR }) => {
             <section className={cx('qr-section', 'scroll-reveal')}>
                 <h2 className={cx('script-title')}>🧧 Hộp Quà Mừng</h2>
                 <button className={cx('gift-box-btn')} onClick={handleOpen} type="button">
-                    <img src="./src/assets/images/gift.png" alt="Hộp Quà Mừng" className={cx('gift-icon-img')} />
+                    <img src={giftImg} alt="Hộp Quà Mừng" className={cx('gift-icon-img')} />
                     <span className={cx('gift-btn-text')}>Bấm để mở 💝</span>
                 </button>
             </section>
@@ -47,7 +51,7 @@ export const GiftModal = ({ downloadQR }) => {
                                 <h4 className={cx('qr-side-title')}>Chú Rể — Nguyễn Văn Khương</h4>
 
                                 <div className={cx('qr-img-box-popup')}>
-                                    <img src="./src/assets/images/qr.jpg" alt="QR Chú Rể" id="qrGroomImg" />
+                                    <img src={qrGroomImg} alt="QR Chú Rể" id="qrGroomImg" />
                                 </div>
 
                                 <p className={cx('qr-bank')}>Vietcombank</p>

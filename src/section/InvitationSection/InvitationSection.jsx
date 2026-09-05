@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './InvitationSection.module.scss';
-import Line from '../../components/line/line';
+import Line from '../../components/line/line.jsx';
+
+// Import hình ảnh từ thư mục assets
+import chuReImg from '../../assets/images/chu_re.jpg';
+import coDauImg from '../../assets/images/co_dau.jpg';
 
 const cx = classNames.bind(styles);
 
@@ -65,10 +69,10 @@ export const InvitationSection = () => {
 
                         <div className={cx('avatars-row')}>
                             <div className={cx('avatar-item')}>
-                                <img src="./src/assets/images/chu_re.jpg" alt="Chú rể Nguyễn Văn Khương" />
+                                <img src={chuReImg} alt="Chú rể Nguyễn Văn Khương" />
                             </div>
                             <div className={cx('avatar-item')}>
-                                <img src="./src/assets/images/co_dau.jpg" alt="Cô dâu Vũ Thu Huế" />
+                                <img src={coDauImg} alt="Cô dâu Vũ Thu Huế" />
                             </div>
                         </div>
 

@@ -3,6 +3,14 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './StoryGallerySection.module.scss';
 
+// Import toàn bộ hình ảnh từ thư mục assets
+import img3 from '../../assets/images/3.jpg';
+import img1 from '../../assets/images/1.jpg';
+import img2 from '../../assets/images/2.jpg';
+import img7 from '../../assets/images/7.jpg';
+import img9 from '../../assets/images/9.jpg';
+import img5 from '../../assets/images/5.jpg';
+
 const cx = classNames.bind(styles);
 
 export const StoryGallerySection = () => {
@@ -17,7 +25,7 @@ export const StoryGallerySection = () => {
                         <span>Huế</span>
                     </div>
                     <div className={cx('photo-side')}>
-                        <img src="./src/assets/images/3.jpg" alt="Ảnh đôi" />
+                        <img src={img3} alt="Ảnh đôi" />
                     </div>
                 </div>
             </section>
@@ -29,15 +37,15 @@ export const StoryGallerySection = () => {
                 </p>
                 <div className={cx('grid-2-col')}>
                     <div className={cx('img-box')}>
-                        <img src="./src/assets/images/1.jpg" alt="Ảnh cưới 1" />
+                        <img src={img1} alt="Ảnh cưới 1" />
                     </div>
                     <div className={cx('img-box')}>
-                        <img src="./src/assets/images/2.jpg" alt="Ảnh cưới 2" />
+                        <img src={img2} alt="Ảnh cưới 2" />
                     </div>
                 </div>
                 <div className={cx('grid-1-col')}>
                     <div className={cx('img-box')}>
-                        <img src="./src/assets/images/7.jpg" alt="Ảnh cưới 3" />
+                        <img src={img7} alt="Ảnh cưới 3" />
                     </div>
                 </div>
                 <div className={cx('chapter-title')}>
@@ -47,10 +55,10 @@ export const StoryGallerySection = () => {
 
                 <div className={cx('grid-2-col', 'pc-extra-row')}>
                     <div className={cx('img-box')}>
-                        <img src="./src/assets/images/9.jpg" alt="Ảnh cưới 6" />
+                        <img src={img9} alt="Ảnh cưới 6" />
                     </div>
                     <div className={cx('img-box')}>
-                        <img src="./src/assets/images/5.jpg" alt="Ảnh cưới 7" />
+                        <img src={img5} alt="Ảnh cưới 7" />
                     </div>
                 </div>
             </section>

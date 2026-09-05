@@ -1,7 +1,14 @@
 import React from 'react';
-
 import classNames from 'classnames/bind';
 import styles from './WeddingEventDetails.module.scss';
+
+// Import các hình ảnh từ thư mục assets
+import img2 from '../../assets/images/2.jpg';
+import img4 from '../../assets/images/4.jpg';
+import img6 from '../../assets/images/6.jpg';
+import img3 from '../../assets/images/3.jpg';
+import img5 from '../../assets/images/5.jpg';
+import img1 from '../../assets/images/1.jpg';
 
 const cx = classNames.bind(styles);
 
@@ -12,25 +19,25 @@ export const WeddingEventDetails = () => {
 
             <div className={cx('wedding-gallery')}>
                 <div className={cx('gallery-item', 'side')}>
-                    <img src="./src/assets/images/2.jpg" alt="Ảnh cưới 1" />
+                    <img src={img2} alt="Ảnh cưới 1" />
                 </div>
                 <div className={cx('gallery-item', 'main')}>
-                    <img src="./src/assets/images/4.jpg" alt="Ảnh cưới chính" />
+                    <img src={img4} alt="Ảnh cưới chính" />
                 </div>
                 <div className={cx('gallery-item', 'side')}>
-                    <img src="./src/assets/images/6.jpg" alt="Ảnh cưới 3" />
+                    <img src={img6} alt="Ảnh cưới 3" />
                 </div>
             </div>
 
             <div className={cx('wedding-gallery', 'pc-gallery-extra')}>
                 <div className={cx('gallery-item', 'side')}>
-                    <img src="./src/assets/images/3.jpg" alt="Ảnh cưới 4" />
+                    <img src={img3} alt="Ảnh cưới 4" />
                 </div>
                 <div className={cx('gallery-item', 'side')}>
-                    <img src="./src/assets/images/5.jpg" alt="Ảnh cưới 5" />
+                    <img src={img5} alt="Ảnh cưới 5" />
                 </div>
                 <div className={cx('gallery-item', 'side')}>
-                    <img src="./src/assets/images/1.jpg" alt="Ảnh cưới 6" />
+                    <img src={img1} alt="Ảnh cưới 6" />
                 </div>
             </div>
 

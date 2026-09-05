@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './VenueSection.module.scss';
-import Line from '../../components/line/line';
+import Line from '../../components/line/line.jsx';
 
 const cx = classNames.bind(styles);
 
