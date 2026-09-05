@@ -22,7 +22,7 @@ function App() {
     const [isPlaying, setIsPlaying] = useState('false');
     return (
         <div>
-            {/* <WeddiingCard setIsPlaying={setIsPlaying} /> */}
+            <WeddiingCard setIsPlaying={setIsPlaying} />
             <div id="container-cover" className={cx('main-content')}>
                 <BackgroundAudio isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
                 <HeroSection />
