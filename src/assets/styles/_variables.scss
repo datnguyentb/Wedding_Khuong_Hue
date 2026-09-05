@@ -1,0 +1,40 @@
+/* ==========================================
+   BIẾN & FONTS — _variables.scss
+========================================== */
+:root {
+    --bg-red: #6c2224;
+    --card-bg: #ffffff;
+    --text-light: #ffffff;
+    --text-dark: #2c2c2c;
+    --primary-color: #8b1d24;
+    --primary-hover: #6a1319;
+    --text-muted: #666666;
+    --border-color: #e2e8f0;
+    --gold: #d4af37;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Fonts dùng chung */
+$font-alex: 'Alex Brush', 'Great Vibes', cursive;
+$font-dancing: 'Dancing Script', cursive;
+$font-playfair: 'Playfair Display', serif;
+$font-montserrat: 'Montserrat', sans-serif;
+
+/* Màu tái sử dụng */
+$color-primary: #6c2224;
+$color-primary-dark: #6c2224;
+$color-primary-hover: #6a1319;
+$color-gold: #d4af37;
+$color-bg-gradient-start: #4b0f12;
+$color-bg-gradient-mid: #6c2224;
+$color-bg-gradient-end: #7a1f22;
+
+/* Bóng đổ */
+$shadow-card: 0 24px 70px rgba(0, 0, 0, 0.35);
+$shadow-btn: 0 6px 20px rgba(108, 34, 36, 0.4);
+$shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+/* Độ bo góc */
+$radius-lg: 24px;
+$radius-xl: 40px;
+$radius-pill: 50px;

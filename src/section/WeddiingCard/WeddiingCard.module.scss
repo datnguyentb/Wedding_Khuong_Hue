@@ -1,0 +1,233 @@
+/* ==========================================
+   MÀN HÌNH MỞ THIỆP - CĂN GIỮA MỌI MÀN HÌNH
+========================================== */
+.coverPage {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    will-change: opacity, transform; /* ✅ Ép GPU xử lý mượt hơn */
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.coverPage.hidden-cover {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(1.08);
+    visibility: hidden; /* ✅ Ẩn hẳn để tránh giật lag layout */
+}
+
+/* Nền */
+.cover-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, #6c2224 0%, #3b0a0c 100%);
+}
+
+/* Khung thiệp */
+.cover-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: clamp(10px, 3vw, 18px);
+    background: #fff9f2;
+    padding: clamp(30px, 7vw, 45px) clamp(15px, 5vw, 25px);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+    z-index: 2;
+    width: 90%;
+    max-width: 500px;
+    box-sizing: border-box;
+    border: 1px solid rgba(212, 175, 55, 0.4);
+    outline: 4px solid #fff9f2;
+    outline-offset: -10px;
+}
+
+/* Hoa trang trí */
+.floral-decoration {
+    width: clamp(55px, 13vw, 90px);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+
+    &.left {
+        justify-content: flex-start;
+    }
+    &.right {
+        justify-content: flex-end;
+        transform: scaleX(-1);
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+        opacity: 0.9;
+        object-fit: contain;
+        display: block;
+    }
+}
+
+/* Nội dung giữa */
+.cover-card-content {
+    flex: 1;
+    text-align: center;
+    min-width: 0;
+}
+
+/* Nút tròn trái tim đập nhẹ */
+.heart-icon-circle {
+    width: 48px;
+    height: 48px;
+    background: #6c2224;
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto clamp(12px, 3vw, 18px);
+    font-size: 20px;
+    box-shadow: 0 4px 12px rgba(108, 34, 36, 0.3);
+    animation: heartbeat 1.8s infinite ease-in-out;
+}
+
+@keyframes heartbeat {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Tên cặp đôi */
+.cover-names {
+    font-family: 'Alex Brush', 'Dancing Script', cursive;
+    font-size: clamp(30px, 8vw, 46px);
+    color: #5c1216;
+    margin-bottom: 6px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.ampersand {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.7em;
+    font-style: italic;
+    color: #a33b3e;
+}
+
+/* Đường kẻ ngăn cách */
+.divider-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0 14px;
+
+    &::before,
+    &::after {
+        content: '';
+        width: 40px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, #8b1d24, transparent);
+    }
+}
+
+.divider-dot {
+    font-size: 12px;
+    color: #8b1d24;
+}
+
+/* Ngày tháng & Lời mời */
+.cover-date {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(14px, 3.5vw, 16px);
+    color: #7a2026;
+    letter-spacing: 1.5px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.cover-greeting {
+    font-family: 'Alex Brush', cursive;
+    font-size: clamp(20px, 5vw, 24px);
+    color: #8b1d24;
+    margin-bottom: clamp(20px, 5vw, 26px);
+}
+
+/* Nút Mở Thiệp */
+.open-invitation-btn {
+    position: relative;
+    overflow: hidden;
+    padding: 14px 40px;
+    background: linear-gradient(135deg, #6c2224, #5c1216);
+    color: #fff9f2;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 6px 20px rgba(108, 34, 36, 0.4);
+    transition: all 0.3s ease;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 60%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+        transform: skewX(-25deg);
+        animation: shine 2.5s ease-in-out infinite;
+    }
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(108, 34, 36, 0.45);
+    }
+}
+
+@keyframes shine {
+    0% {
+        left: -100%;
+    }
+    50%,
+    100% {
+        left: 150%;
+    }
+}
+
+/* ==========================================
+   HIỆU ỨNG TRÁI TIM RƠI
+========================================== */
+#heartsRain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 101;
+    overflow: hidden;
+}
+
+.heart-fall {
+    position: absolute;
+    top: -20px;
+    color: rgba(255, 220, 220, 0.6);
+    will-change: transform, opacity; /* ✅ Tối ưu GPU cho animation rơi */
+    animation: fallDown linear infinite;
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(105vh) rotate(360deg);
+        opacity: 0;
+    }
+}

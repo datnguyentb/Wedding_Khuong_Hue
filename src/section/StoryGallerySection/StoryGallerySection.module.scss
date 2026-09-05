@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+$bg-burgundy: #6b1d24; /* Màu nền đỏ đô chủ đạo */
+$text-red: #6b1d24; /* Màu chữ đỏ đô cho quote và Chapter */
+$font-script: 'Dancing Script', cursive;
+$font-sans: 'Montserrat', sans-serif;
+
+/* ----------------------------------
+   1. SECTION HERO (QUOTE + THẺ TRẮNG 2 CỘT)
+---------------------------------- */
+.love-quote-section {
+    background-color: $bg-burgundy;
+    padding: 24px 0 0 0;
+    max-width: 480px;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    /* Dòng quote uốn lượn màu trắng trên nền đỏ */
+    .quote-text {
+        font-family: $font-script;
+        font-size: clamp(20px, 5.5vw, 25px);
+        font-weight: 600;
+        color: #ffffff;
+        text-align: center;
+        margin: 0 0 20px 0;
+        line-height: 1.4;
+    }
+
+    /* Thẻ trắng nổi bật chứa tên và ảnh */
+    .card-hero-photo {
+        background-color: #ffffff;
+        border-radius: 4px;
+        padding: 24px 16px 24px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+
+        /* Cột trái: Tên cô dâu chú rể xếp dọc */
+        .names-side {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex: 1;
+
+            span {
+                font-family: $font-script;
+                font-size: clamp(36px, 9vw, 46px);
+                font-weight: 700;
+                color: $text-red;
+                line-height: 1.1;
+                text-align: center;
+            }
+
+            .ampersand {
+                font-size: clamp(28px, 7vw, 36px);
+                margin: 6px 0;
+                font-style: italic;
+            }
+        }
+
+        /* Cột phải: Ảnh cưới chính */
+        .photo-side {
+            width: 62%;
+            flex-shrink: 0;
+
+            img {
+                width: 100%;
+                height: auto;
+                max-height: 380px;
+                object-fit: cover;
+                display: block;
+            }
+        }
+    }
+}
+
+/* ----------------------------------
+   2. SECTION GALLERY (THẺ NỀN TRẮNG/KEM BỌC TOÀN BỘ)
+---------------------------------- */
+.story-gallery-section {
+    background-color: $bg-burgundy;
+    padding: 20px 16px 32px 16px;
+    max-width: 480px;
+    margin: 20px auto;
+    box-sizing: border-box;
+
+    /* Toàn bộ nội dung gallery nằm trong khối thẻ nền kem/trắng này */
+    background-color: #fffdfa;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+
+    /* Quote chữ đỏ viết tay đầu gallery */
+    .quote-text {
+        font-family: $font-script;
+        font-size: clamp(22px, 5.5vw, 26px);
+        font-weight: 600;
+        color: $text-red;
+        text-align: center;
+        line-height: 1.5;
+        margin: 0 0 24px 0;
+        padding-top: 24px;
+    }
+
+    /* Lưới ảnh 2 cột */
+    .grid-2-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 12px;
+        padding: 0 16px;
+    }
+
+    /* Lưới ảnh 1 cột */
+    .grid-1-col {
+        margin-bottom: 16px;
+        padding: 0 16px;
+    }
+
+    /* Khung chứa ảnh */
+    .img-box {
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+    }
+
+    /* Tiêu đề Chapter Three */
+    .chapter-title {
+        padding: 16px 16px 12px 16px;
+
+        h3 {
+            text-align: center;
+            font-family: $font-script;
+            font-size: clamp(32px, 8vw, 40px);
+            color: $text-red;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .sub-quote {
+            font-family: $font-sans;
+            font-size: 13px;
+            color: #333333;
+            margin: 0;
+            font-style: normal;
+            font-weight: 500;
+            text-align: center; /* Dòng sub-quote nhỏ căn giữa */
+            padding-top: 8px;
+        }
+    }
+
+    /* Hàng 2 ảnh cuối cùng */
+    .pc-extra-row {
+        margin-top: 12px;
+        padding-bottom: 24px;
+    }
+}

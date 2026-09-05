@@ -1,0 +1,31 @@
+{
+    "name": "wedding",
+    "private": true,
+    "version": "0.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "lint": "oxlint",
+        "preview": "vite preview",
+        "deploy": "gh-pages -d dist"
+    },
+    "dependencies": {
+        "classnames": "^2.5.1",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.29.7",
+        "@rolldown/plugin-babel": "^0.2.3",
+        "@types/react": "^19.2.18",
+        "@types/react-dom": "^19.2.4",
+        "@vitejs/plugin-react": "^6.1.0",
+        "babel-plugin-react-compiler": "^1.0.0",
+        "gh-pages": "^6.3.0",
+        "oxlint": "^1.79.0",
+        "sass": "^1.104.0",
+        "typescript": "^5.9.3",
+        "vite": "^8.2.2"
+    }
+}

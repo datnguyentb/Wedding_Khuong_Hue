@@ -1,0 +1,44 @@
+$bg-burgundy: #6c2224; /* Màu đỏ đô nền ngoài */
+
+.custom-line {
+    width: 100%;
+    height: 4px;
+    background-color: #6b1d24;
+    margin: 20px 0;
+
+    /* Dạng 1: Đường kẻ đơn thuần (default) */
+    &.line {
+        position: relative;
+    }
+
+    /* Dạng 2: Đường kẻ kèm 2 vết khuyết hình tròn ở 2 mép */
+    &.notch {
+        position: relative;
+        width: calc(100% + 40px); /* Kéo tràn qua padding 20px của thẻ chứa */
+        left: -20px;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: $bg-burgundy;
+            border-radius: 50%;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: $bg-burgundy;
+            border-radius: 50%;
+        }
+    }
+}

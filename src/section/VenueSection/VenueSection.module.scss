@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+$font-script: 'Dancing Script', cursive;
+$font-sans: 'Montserrat', sans-serif;
+
+/* CONTAINER THẺ TRẮNG NỘI DUNG */
+.venue-card {
+    background: #ffffff;
+    padding: 24px 20px 32px;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+/* TIÊU ĐỀ: Địa Điểm Tổ Chức 🗺️ */
+.script-title {
+    font-family: $font-script;
+    font-size: clamp(32px, 7.5vw, 40px);
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 8px 0;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* THÔNG TIN ĐỊA CHỈ PHỤ (MỎNG - NHẠT - SẠCH SẼ) */
+.venue-address {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 13px; /* Size nhỏ vừa mắt */
+    font-weight: 500; /* Nét chữ vừa phải, không bị dày/thô */
+    color: #666666; /* Màu xám nhạt trung tính */
+    letter-spacing: 0.5px; /* Tăng khoảng cách chữ cho thoáng */
+    margin: 0 auto 20px auto;
+    line-height: 1.5;
+    max-width: 90%; /* Giới hạn độ rộng để xuống hàng đẹp mắt */
+}
+
+/* KHUNG BẢN ĐỒ EMBED */
+.map-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 16px;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+
+    iframe {
+        display: block;
+    }
+}
+
+/* NÚT XEM CHỈ ĐƯỜNG */
+.map-btn-box {
+    display: flex;
+    justify-content: center;
+
+    .open-map-btn {
+        display: inline-block;
+        padding: 8px 18px;
+        background: #f4f4f4;
+        color: #444444;
+        text-decoration: none;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        transition: background 0.2s;
+
+        &:hover {
+            background: #e5e5e5;
+        }
+    }
+}

@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+$bg-burgundy: #6b1d24; /* Màu nền đỏ đô bao ngoài */
+$font-script: 'Dancing Script', cursive;
+
+/* KHUNG NGOÀI BAO BỌC MÀU ĐỎ ĐÔ */
+.rsvp-section {
+    max-width: 480px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* THẺ TRẮNG BAO CHÍNH */
+.rsvp-card {
+    background-color: #ffffff;
+    padding: 32px 20px 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* PHẦN HEADER: TIÊU ĐỀ + LOGO SONG HỶ */
+.rsvp-header {
+    margin-bottom: 24px;
+
+    /* Tiêu đề "Xác nhận tham dự" chữ viết tay */
+    .script-title {
+        font-family: $font-script;
+        font-size: clamp(34px, 8vw, 42px);
+        font-weight: 700;
+        color: #000000;
+        margin: 0 0 16px 0;
+        line-height: 1.2;
+    }
+
+    /* Icon/Con dấu Song Hỷ (囍) */
+    .stamp-icon {
+        font-size: 48px;
+        color: #be0000;
+        line-height: 1;
+        display: inline-block;
+        padding: 8px 12px;
+        border: 2px solid #be0000;
+        border-radius: 8px;
+    }
+}
+
+/* FORM MÀU TRẮNG PHÍA TRONG CÓ SHADOW NỔI BẬT */
+.rsvp-form {
+    background: #ffffff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    padding: 24px 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+
+    /* Nhãn "Họ và tên" và "Bạn sẽ tham dự chứ?" */
+    label,
+    .group-label {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 14px;
+        color: #333333;
+        margin-bottom: 8px;
+        font-weight: 500;
+    }
+
+    /* Ô input nhập tên */
+    input[type='text'] {
+        width: 100%;
+        margin-top: 10px;
+        padding: 10px 12px;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 14px;
+        color: #333333;
+        box-sizing: border-box;
+        outline: none;
+        transition: border-color 0.2s;
+
+        &::placeholder {
+            color: #a0aec0;
+        }
+
+        &:focus {
+            border-color: #cbd5e0;
+        }
+    }
+}
+
+/* LỰA CHỌN RADIO */
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    input[type='radio'] {
+        width: 18px;
+        height: 18px;
+        accent-color: #3182ce; /* Màu radio button xanh lam chuẩn như ảnh mẫu */
+        cursor: pointer;
+        margin: 0;
+    }
+
+    .option-text {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 14px;
+        color: #333333;
+    }
+}
+
+/* NÚT GỬI XÁC NHẬN MÀU ĐỎ ĐÔ ĐẬM */
+.submit-btn {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #be0000; /* Màu đỏ nổi bật chuẩn theo mẫu */
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 8px;
+
+    &:hover {
+        background-color: #9e0000;
+    }
+}
