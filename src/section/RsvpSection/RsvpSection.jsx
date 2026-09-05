@@ -5,7 +5,7 @@ import styles from './RsvpSection.module.scss';
 const cx = classNames.bind(styles);
 
 const APPSCRIPT_URL =
-    'https://script.google.com/macros/s/AKfycbwQNM3aOMtUFMARXs7JS8Y5xs0aLEbQK5AYLHPq7odGIYRKI89g1mwRJIlBCIHcZPyI/exec';
+    'https://script.google.com/macros/s/AKfycbyQnT509pyhRqvmaxHgVEwQRFObpTtVISKENtg1R-oZRQVsK5C6P-pEGEBO0INogoPx/exec';
 
 export const RsvpSection = () => {
     const [name, setName] = useState('');
@@ -28,12 +28,14 @@ export const RsvpSection = () => {
 
         try {
             const formData = new URLSearchParams();
+            formData.append('type', 'rsvp');
             formData.append('name', trimmedName);
             formData.append('attendance', attendance);
-            formData.append('type', 'rsvp'); // Phân biệt để ghi vào file tham_gia.gs / tab Xac_nhan
 
+            // Thêm mode: 'no-cors' để vượt qua cơ chế chặn của Google Apps Script
             await fetch(APPSCRIPT_URL, {
                 method: 'POST',
+                mode: 'no-cors',
                 body: formData,
             });
 

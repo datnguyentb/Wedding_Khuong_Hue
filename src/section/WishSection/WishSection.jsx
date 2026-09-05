@@ -5,7 +5,7 @@ import styles from './WishSection.module.scss';
 const cx = classNames.bind(styles);
 
 const APPSCRIPT_URL =
-    'https://script.google.com/macros/s/AKfycbwQNM3aOMtUFMARXs7JS8Y5xs0aLEbQK5AYLHPq7odGIYRKI89g1mwRJIlBCIHcZPyI/exec';
+    'https://script.google.com/macros/s/AKfycbyQnT509pyhRqvmaxHgVEwQRFObpTtVISKENtg1R-oZRQVsK5C6P-pEGEBO0INogoPx/exec';
 
 const SCROLL_SPEED = 0.3; // Tốc độ cuộn
 
