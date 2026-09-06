@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/* ==========================================
+   GIFT MODAL — HỘP QUÀ MỪNG & POPUP QR
+========================================== */
+/* --- Section Nút Mở Quà --- */
+.qr-section {
+  width: 100%;
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.qr-section.scroll-reveal {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.script-title {
+  font-family: "Alex Brush", "Great Vibes", cursive;
+  font-size: clamp(32px, 6.5vw, 42px);
+  color: #d4af37;
+  margin: 0 0 16px;
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
+}
+
+.gift-box-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  border-radius: 16px;
+  padding: 20px 32px;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.gift-box-btn:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: #d4af37;
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+}
+.gift-box-btn:hover .gift-icon-img {
+  transform: scale(1.1) rotate(5deg);
+}
+.gift-box-btn .gift-icon-img {
+  width: 64px;
+  height: 64px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 4px 10px rgba(212, 175, 55, 0.3));
+}
+.gift-box-btn .gift-btn-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #d4af37;
+  letter-spacing: 0.5px;
+}
+
+/* --- POPUP OVERLAY (Màn hình mờ bao ngoài) --- */
+.gift-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+  box-sizing: border-box;
+  /* Lưu ý: Nếu dùng React State kiểm soát popup, có thể bật/tắt bằng class này */
+  opacity: 1;
+  visibility: visible;
+  transition: all 0.3s ease;
+}
+
+/* --- KHUNG NỘI DUNG POPUP --- */
+.gift-popup-content {
+  background: #181515;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 20px;
+  padding: 32px 24px 28px;
+  max-width: 380px;
+  width: 100%;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  animation: popupZoom 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+.gift-popup-content .popup-close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 20px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.gift-popup-content .popup-close-btn:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+.gift-popup-content .popup-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #d4af37;
+  letter-spacing: 2px;
+  margin: 0 0 20px;
+  text-transform: uppercase;
+}
+
+/* --- CARD BÊN TRONG POPUP --- */
+.qr-container-popup {
+  display: flex;
+  justify-content: center;
+}
+
+.qr-card-popup {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 12px;
+  padding: 18px;
+  width: 100%;
+}
+.qr-card-popup .qr-side-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 14px;
+}
+.qr-card-popup .qr-img-box-popup {
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 14px;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.qr-card-popup .qr-img-box-popup img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+.qr-card-popup .qr-bank {
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  color: #d4af37;
+  font-weight: 600;
+  margin: 0 0 2px;
+  text-transform: uppercase;
+}
+.qr-card-popup .qr-account {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin: 0 0 2px;
+}
+.qr-card-popup .qr-account-name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+.qr-card-popup .save-qr-btn {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.9), rgba(180, 140, 30, 0.9));
+  color: #1a1a1a;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+}
+.qr-card-popup .save-qr-btn:hover {
+  background: linear-gradient(135deg, #d4af37, #e6c555);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+  transform: translateY(-1px);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes popupZoom {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=GiftModal.module.css.map */

@@ -1,0 +1,195 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;700&display=swap");
+/* Màu nền đỏ đô bao ngoài */
+.footer-invite {
+  padding: 0 16px 20px; /* Bỏ padding top để nối sát phần trên */
+  max-width: 480px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* TẠO THẺ TRẮNG LIỀN MẠCH CÓ VẾT KHUYẾT Ở MÉP TRÊN */
+.footer-invite {
+  position: relative;
+  /* Gom toàn bộ nội dung vào thẻ trắng */
+}
+.footer-invite > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Thẻ chứa toàn bộ nội dung Trân trọng kính mời -> Ngày tháng */
+.footer-invite {
+  /* Đổi container chính thành background trắng */
+  /* Tạo thẻ trắng nối tiếp */
+}
+.footer-invite::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 16px;
+  bottom: 20px;
+  background: #ffffff;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: 1;
+}
+
+/* VẾT KHUYẾT BÁN NGUYỆT 2 BÊN NỐI VỚI SECTION TRÊN */
+.script-title.inverse {
+  position: relative;
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(32px, 7.5vw, 42px);
+  font-weight: 700;
+  color: #000000;
+  text-align: center;
+  margin: 0 0 24px 0;
+  padding-top: 10px;
+  /* Vết khuyết bên trái */
+}
+.script-title.inverse::before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  top: -12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  z-index: 3;
+}
+.script-title.inverse {
+  /* Vết khuyết bên phải */
+}
+.script-title.inverse::after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  top: -12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+/* --- GALLERY 3 ẢNH NỔI (ẢNH GIỮA TO HƠN) --- */
+.wedding-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0 10px;
+  margin-bottom: 28px;
+}
+.wedding-gallery .gallery-item {
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+.wedding-gallery .gallery-item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.wedding-gallery .gallery-item {
+  /* 2 ảnh bên cạnh */
+}
+.wedding-gallery .gallery-item.side {
+  width: 30%;
+  height: 170px;
+}
+.wedding-gallery .gallery-item {
+  /* Ảnh chính ở giữa nhô cao hơn */
+}
+.wedding-gallery .gallery-item.main {
+  width: 38%;
+  height: 210px;
+  z-index: 2;
+}
+
+/* Ẩn bớt gallery phụ trên Mobile nếu trùng với ảnh mẫu */
+.pc-gallery-extra {
+  display: none;
+}
+
+/* --- CHI TIẾT SỰ KIỆN --- */
+.event-details {
+  text-align: center;
+  padding: 0 10px 20px;
+}
+.event-details .event-title {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #000000;
+  margin: 0 0 8px;
+}
+.event-details .event-sub {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  color: #333333;
+  margin: 0 0 16px;
+}
+
+/* THỜI GIAN VỚI 2 ĐƯỜNG KẺ DỌC */
+.date-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.date-display .time-col {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: #000000;
+  width: 60px;
+  text-align: right;
+}
+.date-display .divider {
+  width: 1.5px;
+  height: 50px;
+  background-color: #000000;
+}
+.date-display .day-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+.date-display .day-col .day-name {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  color: #000000;
+}
+.date-display .day-col .day-number {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 26px;
+  font-weight: 700;
+  font-style: italic;
+  color: #000000;
+  line-height: 1.1;
+  margin: 2px 0;
+}
+.date-display .day-col .month-name {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  color: #000000;
+}
+.date-display .year-col {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  color: #000000;
+  width: 60px;
+  text-align: left;
+}
+
+.sub-info {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  color: #555555;
+  font-style: italic;
+}/*# sourceMappingURL=WeddingEventDetails.module.css.map */

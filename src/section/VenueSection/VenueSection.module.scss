@@ -1,7 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap');
-
 $font-script: 'Dancing Script', cursive;
-$font-sans: 'Montserrat', sans-serif;
 
 /* CONTAINER THẺ TRẮNG NỘI DUNG */
 .venue-card {
@@ -68,6 +65,7 @@ $font-sans: 'Montserrat', sans-serif;
         font-size: 12px;
         font-weight: 600;
         transition: background 0.2s;
+        font-family: 'Times New Roman', Times, serif;
 
         &:hover {
             background: #e5e5e5;

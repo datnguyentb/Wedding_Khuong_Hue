@@ -1,9 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;500;600&display=swap');
-
 $bg-burgundy: #6b1d24; /* Màu nền đỏ đô chủ đạo */
 $text-red: #6b1d24; /* Màu chữ đỏ đô cho quote và Chapter */
 $font-script: 'Dancing Script', cursive;
-$font-sans: 'Montserrat', sans-serif;
 
 /* ----------------------------------
    1. SECTION HERO (QUOTE + THẺ TRẮNG 2 CỘT)
@@ -147,8 +144,8 @@ $font-sans: 'Montserrat', sans-serif;
         }
 
         .sub-quote {
-            font-family: $font-sans;
-            font-size: 13px;
+            font-family: 'Alex Brush', 'Great Vibes', cursive;
+            font-size: 18px;
             color: #333333;
             margin: 0;
             font-style: normal;

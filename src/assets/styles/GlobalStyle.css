@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/* ==========================================
+   BIẾN & FONTS — _variables.scss
+========================================== */
+:root {
+  --bg-red: #6c2224;
+  --card-bg: #ffffff;
+  --text-light: #ffffff;
+  --text-dark: #2c2c2c;
+  --primary-color: #8b1d24;
+  --primary-hover: #6a1319;
+  --text-muted: #666666;
+  --border-color: #e2e8f0;
+  --gold: #d4af37;
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Fonts dùng chung */
+/* Màu tái sử dụng */
+/* Bóng đổ */
+/* Độ bo góc */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Times New Roman", Times, serif;
+}/*# sourceMappingURL=GlobalStyle.css.map */

@@ -14,10 +14,8 @@
     overflow-x: hidden;
     box-sizing: border-box;
 
-    /* Tối ưu bóng đổ tạo cảm giác thiệp nổi trên PC */
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 
-    /* Ép gia tốc phần cứng giúp cuộn mượt hơn */
     -webkit-overflow-scrolling: touch;
 }
 
@@ -25,15 +23,14 @@
    MÀN HÌNH MÁY TÍNH (DESKTOP)
 ========================================== */
 @media (min-width: 768px) {
-    /* Tạo khoảng trống viền ngoài cho PC nhìn sang hơn */
     body {
-        background-color: #2a080a; /* Nền tối phía ngoài khung thiệp */
+        background-color: #2a080a;
     }
 
     .main-content {
         margin-top: 20px;
         margin-bottom: 20px;
-        border-radius: 16px; /* Bo tròn góc thiệp trên màn hình to */
+        border-radius: 16px;
         min-height: calc(100vh - 40px);
     }
 }

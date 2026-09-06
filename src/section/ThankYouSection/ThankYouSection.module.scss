@@ -6,7 +6,7 @@ $gold-color: #d4af37;
 $text-light: rgba(255, 255, 255, 0.9);
 $font-script: 'Alex Brush', 'Great Vibes', cursive;
 $font-sans: 'Montserrat', sans-serif;
-$font-serif: 'Playfair Display', serif;
+$font-serif: 'Alex Brush', 'Great Vibes', cursive;
 
 .thank-you-section {
     width: 100%;
@@ -64,7 +64,7 @@ $font-serif: 'Playfair Display', serif;
 
 .thank-you-quote {
     font-family: $font-serif;
-    font-size: clamp(13px, 3.2vw, 15px);
+    font-size: 20px;
     font-style: italic;
     color: $text-light;
     line-height: 1.6;
@@ -74,7 +74,7 @@ $font-serif: 'Playfair Display', serif;
 
 .thank-you-title {
     font-family: $font-script;
-    font-size: clamp(32px, 6.5vw, 44px);
+    font-size: 30px;
     color: $gold-color;
     margin: 0 0 16px;
     font-weight: normal;
@@ -86,7 +86,7 @@ $font-serif: 'Playfair Display', serif;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    font-family: $font-sans;
+    font-family: 'Times New Roman', Times, serif;
     font-size: clamp(15px, 4vw, 18px);
     font-weight: 600;
     color: #ffffff;
@@ -102,7 +102,7 @@ $font-serif: 'Playfair Display', serif;
 }
 
 .thank-you-date {
-    font-family: $font-sans;
+    font-family: 'Times New Roman', Times, serif;
     font-size: 13px;
     color: $gold-color;
     letter-spacing: 4px;

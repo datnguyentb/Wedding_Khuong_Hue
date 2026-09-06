@@ -1,0 +1,124 @@
+@charset "UTF-8";
+/* ==========================================
+   THANK YOU SECTION — CẢM ƠN & TRÂN TRỌNG
+========================================== */
+.thank-you-section {
+  width: 100%;
+  max-width: 600px;
+  margin: 60px auto 40px;
+  padding: 0 16px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+.thank-you-section.scroll-reveal {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* --- Đường viền hoa văn trang trí Trên/Dưới --- */
+.thank-you-border-top,
+.thank-you-border-bottom {
+  width: 60%;
+  height: 1px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.6), transparent);
+  position: relative;
+}
+.thank-you-border-top::after,
+.thank-you-border-bottom::after {
+  content: "❖";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #d4af37;
+  background: #000;
+  padding: 0 8px;
+  font-size: 10px;
+}
+
+.thank-you-border-top {
+  margin-bottom: 24px;
+}
+
+.thank-you-border-bottom {
+  margin-top: 24px;
+}
+
+/* --- Nội dung chính --- */
+.thank-you-content {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 16px;
+  padding: 32px 20px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.thank-you-quote {
+  font-family: "Alex Brush", "Great Vibes", cursive;
+  font-size: 20px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin: 0 0 18px;
+  letter-spacing: 0.5px;
+}
+
+.thank-you-title {
+  font-family: "Alex Brush", "Great Vibes", cursive;
+  font-size: 30px;
+  color: #d4af37;
+  margin: 0 0 16px;
+  font-weight: normal;
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.25);
+}
+
+.thank-you-names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: clamp(15px, 4vw, 18px);
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.thank-you-names .heart-icon {
+  color: #e74c3c;
+  font-size: 14px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+.thank-you-date {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 13px;
+  color: #d4af37;
+  letter-spacing: 4px;
+  margin: 0;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* --- Animations --- */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}/*# sourceMappingURL=ThankYouSection.module.css.map */

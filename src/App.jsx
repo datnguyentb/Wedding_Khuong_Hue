@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './App.module.scss';
+import '../src/assets/styles/GlobalStyle.scss';
 import {
     HeroSection,
     WeddiingCard,

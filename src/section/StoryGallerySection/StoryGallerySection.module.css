@@ -1,0 +1,161 @@
+@charset "UTF-8";
+/* Màu nền đỏ đô chủ đạo */
+/* Màu chữ đỏ đô cho quote và Chapter */
+/* ----------------------------------
+   1. SECTION HERO (QUOTE + THẺ TRẮNG 2 CỘT)
+---------------------------------- */
+.love-quote-section {
+  background-color: #6b1d24;
+  padding: 24px 0 0 0;
+  max-width: 480px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  /* Dòng quote uốn lượn màu trắng trên nền đỏ */
+}
+.love-quote-section .quote-text {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(20px, 5.5vw, 25px);
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  margin: 0 0 20px 0;
+  line-height: 1.4;
+}
+.love-quote-section {
+  /* Thẻ trắng nổi bật chứa tên và ảnh */
+}
+.love-quote-section .card-hero-photo {
+  background-color: #ffffff;
+  border-radius: 4px;
+  padding: 24px 16px 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  /* Cột trái: Tên cô dâu chú rể xếp dọc */
+}
+.love-quote-section .card-hero-photo .names-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+.love-quote-section .card-hero-photo .names-side span {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(36px, 9vw, 46px);
+  font-weight: 700;
+  color: #6b1d24;
+  line-height: 1.1;
+  text-align: center;
+}
+.love-quote-section .card-hero-photo .names-side .ampersand {
+  font-size: clamp(28px, 7vw, 36px);
+  margin: 6px 0;
+  font-style: italic;
+}
+.love-quote-section .card-hero-photo {
+  /* Cột phải: Ảnh cưới chính */
+}
+.love-quote-section .card-hero-photo .photo-side {
+  width: 62%;
+  flex-shrink: 0;
+}
+.love-quote-section .card-hero-photo .photo-side img {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+/* ----------------------------------
+   2. SECTION GALLERY (THẺ NỀN TRẮNG/KEM BỌC TOÀN BỘ)
+---------------------------------- */
+.story-gallery-section {
+  background-color: #6b1d24;
+  padding: 20px 16px 32px 16px;
+  max-width: 480px;
+  margin: 20px auto;
+  box-sizing: border-box;
+  /* Toàn bộ nội dung gallery nằm trong khối thẻ nền kem/trắng này */
+  background-color: #fffdfa;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  /* Quote chữ đỏ viết tay đầu gallery */
+}
+.story-gallery-section .quote-text {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(22px, 5.5vw, 26px);
+  font-weight: 600;
+  color: #6b1d24;
+  text-align: center;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+  padding-top: 24px;
+}
+.story-gallery-section {
+  /* Lưới ảnh 2 cột */
+}
+.story-gallery-section .grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+  padding: 0 16px;
+}
+.story-gallery-section {
+  /* Lưới ảnh 1 cột */
+}
+.story-gallery-section .grid-1-col {
+  margin-bottom: 16px;
+  padding: 0 16px;
+}
+.story-gallery-section {
+  /* Khung chứa ảnh */
+}
+.story-gallery-section .img-box {
+  width: 100%;
+  overflow: hidden;
+}
+.story-gallery-section .img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+.story-gallery-section {
+  /* Tiêu đề Chapter Three */
+}
+.story-gallery-section .chapter-title {
+  padding: 16px 16px 12px 16px;
+}
+.story-gallery-section .chapter-title h3 {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(32px, 8vw, 40px);
+  color: #6b1d24;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.story-gallery-section .chapter-title .sub-quote {
+  font-family: "Alex Brush", "Great Vibes", cursive;
+  font-size: 18px;
+  color: #333333;
+  margin: 0;
+  font-style: normal;
+  font-weight: 500;
+  text-align: center; /* Dòng sub-quote nhỏ căn giữa */
+  padding-top: 8px;
+}
+.story-gallery-section {
+  /* Hàng 2 ảnh cuối cùng */
+}
+.story-gallery-section .pc-extra-row {
+  margin-top: 12px;
+  padding-bottom: 24px;
+}/*# sourceMappingURL=StoryGallerySection.module.css.map */
