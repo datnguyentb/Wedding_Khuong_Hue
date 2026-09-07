@@ -45,6 +45,7 @@ export const VenueSection = () => {
                     <div className={cx('notch-bottom')}></div>
                 </div>
             </section>
+
             <Line type="notch" />
         </>
     );

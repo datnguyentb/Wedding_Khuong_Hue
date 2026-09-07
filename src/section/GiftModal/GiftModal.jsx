@@ -43,7 +43,6 @@ export const GiftModal = ({ downloadQR }) => {
                         <button className={cx('popup-close-btn')} onClick={handleClose} type="button">
                             ✕
                         </button>
-
                         <h3 className={cx('popup-title')}>HỘP QUÀ MỪNG</h3>
 
                         <div className={cx('qr-container-popup')}>

@@ -1,5 +1,5 @@
 //import biến
-@import 'variables';
+@use 'variables' as *;
 
 * {
     box-sizing: border-box;
