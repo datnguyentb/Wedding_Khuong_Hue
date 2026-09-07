@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './GiftModal.module.scss';
 
-// Import hình ảnh từ thư mục assets
-import giftImg from '../../assets/images/gift.png';
+// Import QR chú rể (hoặc giữ nguyên cấu hình QR hiện tại của bạn)
 import qrGroomImg from '../../assets/images/qr.jpg';
 
 const cx = classNames.bind(styles);
@@ -27,13 +26,31 @@ export const GiftModal = ({ downloadQR }) => {
 
     return (
         <>
-            {/* SECTION NÚT BẤM MỞ HỘP QUÀ */}
+            {/* SECTION 2 BAO LÌ XÌ ĐUNG ĐƯA MỞ MỪNG CƯỚI */}
             <section className={cx('qr-section', 'scroll-reveal')}>
                 <h2 className={cx('script-title')}>🧧 Hộp Quà Mừng</h2>
-                <button className={cx('gift-box-btn')} onClick={handleOpen} type="button">
-                    <img src={giftImg} alt="Hộp Quà Mừng" className={cx('gift-icon-img')} />
-                    <span className={cx('gift-btn-text')}>Bấm để mở 💝</span>
-                </button>
+
+                <div className={cx('lixi-wrapper')} onClick={handleOpen}>
+                    {/* Bao lì xì trái */}
+                    <div className={cx('lixi-item', 'lixi-left')}>
+                        <img
+                            src="https://lh3.googleusercontent.com/d/1TxEiKrUvZXDhUVH89yWjCzjG2HAIQXOs=s0"
+                            alt="Bao lì xì trái"
+                        />
+                    </div>
+
+                    {/* Bao lì xì phải */}
+                    <div className={cx('lixi-item', 'lixi-right')}>
+                        <img
+                            src="https://lh3.googleusercontent.com/d/1TxEiKrUvZXDhUVH89yWjCzjG2HAIQXOs=s0"
+                            alt="Bao lì xì phải"
+                        />
+                    </div>
+                </div>
+
+                <p className={cx('lixi-hint')} onClick={handleOpen}>
+                    Nhấn để mở
+                </p>
             </section>
 
             {/* POPUP HIỂN THỊ KHI ISOPEN = TRUE */}

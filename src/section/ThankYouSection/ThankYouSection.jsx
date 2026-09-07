@@ -15,9 +15,9 @@ export const ThankYouSection = () => {
                 </p>
                 <h2 className={cx('thank-you-title')}>Cảm Ơn & Trân Trọng !</h2>
                 <div className={cx('thank-you-names')}>
-                    <span>Văn Khương</span>
+                    <h2>Văn Khương</h2>
                     <span className={cx('heart-icon')}>❤️</span>
-                    <span>Thu Huế</span>
+                    <h2>Thu Huế</h2>
                 </div>
                 <p className={cx('thank-you-date')}>20 · 09 · 2026</p>
             </div>

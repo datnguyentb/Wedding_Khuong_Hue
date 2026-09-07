@@ -228,4 +228,80 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+/* --- Section 2 Bao Lì Xì Đung Đưa --- */
+/* --- Section 2 Bao Lì Xì Đè Lên Nhau --- */
+.lixi-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  margin: 25px auto 10px;
+  position: relative;
+  height: 240px;
+}
+.lixi-wrapper:hover {
+  z-index: 10 !important;
+  transform: scale(1.1) !important;
+}
+.lixi-wrapper .lixi-item {
+  width: 120px;
+  position: absolute;
+  transition: transform 0.3s ease;
+}
+.lixi-wrapper .lixi-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+}
+.lixi-wrapper {
+  /* Bao lì xì bên trái: Nằm đè lên trên và nghiêng sang trái */
+}
+.lixi-wrapper .lixi-left {
+  z-index: 2;
+  transform: translateX(-30px) rotate(-12deg);
+  animation: swingOverlapLeft 3.5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+.lixi-wrapper {
+  /* Bao lì xì bên phải: Nằm ở dưới, nhỏ hơn chút và nghiêng sang phải */
+}
+.lixi-wrapper .lixi-right {
+  z-index: 1;
+  transform: translateX(25px) translateY(10px) rotate(10deg) scale(0.92);
+  animation: swingOverlapRight 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.lixi-hint {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #d4af37;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  margin-top: 12px;
+  transition: opacity 0.2s ease;
+}
+.lixi-hint:hover {
+  opacity: 0.8;
+}
+
+/* Hiệu ứng đung đưa nhẹ nhàng khi đang đè lên nhau */
+@keyframes swingOverlapLeft {
+  0%, 100% {
+    transform: translateX(-30px) rotate(-12deg);
+  }
+  50% {
+    transform: translateX(-30px) rotate(-8deg);
+  }
+}
+@keyframes swingOverlapRight {
+  0%, 100% {
+    transform: translateX(25px) translateY(10px) rotate(10deg) scale(0.92);
+  }
+  50% {
+    transform: translateX(25px) translateY(10px) rotate(14deg) scale(0.92);
+  }
 }/*# sourceMappingURL=GiftModal.module.css.map */

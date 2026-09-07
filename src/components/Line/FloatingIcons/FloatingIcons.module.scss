@@ -1,0 +1,34 @@
+.floating-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; // Đảm bảo các icon không cản trở việc click chuột vào nội dung web
+    z-index: 1; // Nằm trên lớp nền mờ nhưng ở dưới nội dung chính nếu cần
+
+    .icon-item {
+        position: absolute;
+        top: -10%;
+        color: rgba(255, 182, 193, 0.6); // Màu hồng nhạt trong suốt, lãng mạn
+        animation: fallDown linear infinite;
+    }
+}
+
+@keyframes fallDown {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    80% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}

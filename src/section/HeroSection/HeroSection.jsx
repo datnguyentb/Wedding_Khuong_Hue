@@ -1,14 +1,21 @@
 import classNames from 'classnames/bind';
 import styles from './HeroSection.module.scss';
-
-// ✅ Import ảnh
-import coupleImg from '../../assets/images/couple_img.png';
 import doubleHappinessImg from '../../assets/images/囍.png';
-import couple from './../../assets/images/couple.jpg';
+
+// Import cả 3 ảnh vào
+import coupleDefault from './../../assets/images/couple.jpg';
+import couple1 from './../../assets/images/couple_1.jpg';
+import couple2 from './../../assets/images/couple_2.jpg';
 
 const cx = classNames.bind(styles);
 
+// Mảng chứa danh sách các ảnh
+const coupleImages = [coupleDefault, couple1, couple2];
+
 function HeroSection() {
+    // Lấy ngẫu nhiên 1 ảnh từ mảng khi component render
+    const randomCoupleImg = coupleImages[Math.floor(Math.random() * coupleImages.length)];
+
     return (
         <div className={cx('wrapper')}>
             <header id="header" className={cx('header')}>
@@ -29,11 +36,12 @@ function HeroSection() {
 
             <section className={cx('couple-img-box')}>
                 <div className={cx('img-frame')}>
-                    {/* ✅ Chữ Hỷ đặt trước ảnh để nằm ở lớp nền phía sau */}
+                    {/* Chữ Hỷ đặt trước ảnh để nằm ở lớp nền phía sau */}
                     <div className={cx('double-happiness')}>
                         <img src={doubleHappinessImg} alt="Chữ Hỷ đôi" />
                     </div>
-                    <img className={cx('couple-img')} src={couple} alt="Anh Khương & Thu Huế" />
+                    {/* Sử dụng biến randomCoupleImg để hiển thị ảnh ngẫu nhiên */}
+                    <img className={cx('couple-img')} src={randomCoupleImg} alt="Anh Khương & Thu Huế" />
                 </div>
             </section>
         </div>

@@ -63,7 +63,7 @@ $font-serif: 'Alex Brush', 'Great Vibes', cursive;
 }
 
 .thank-you-quote {
-    font-family: $font-serif;
+    // font-family: $font-serif;
     font-size: 20px;
     font-style: italic;
     color: $text-light;
@@ -86,8 +86,7 @@ $font-serif: 'Alex Brush', 'Great Vibes', cursive;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: clamp(15px, 4vw, 18px);
+    font-size: 14px;
     font-weight: 600;
     color: #ffffff;
     letter-spacing: 1px;
@@ -96,7 +95,7 @@ $font-serif: 'Alex Brush', 'Great Vibes', cursive;
 
     .heart-icon {
         color: #e74c3c;
-        font-size: 14px;
+        font-size: 16px;
         animation: pulse 1.5s infinite ease-in-out;
     }
 }

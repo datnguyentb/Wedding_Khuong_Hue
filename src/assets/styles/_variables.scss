@@ -1,6 +1,7 @@
-/* ==========================================
-   BIẾN & FONTS — _variables.scss
-========================================== */
+// _variables.scss
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 :root {
     --bg-red: #6c2224;
     --card-bg: #ffffff;
@@ -18,6 +19,8 @@
 $font-alex: 'Alex Brush', 'Great Vibes', cursive;
 $font-dancing: 'Dancing Script', cursive;
 $font-playfair: 'Playfair Display', serif;
+$font-montserrat: 'Montserrat', sans-serif;
+$font-garamond: 'Cormorant Garamond', serif;
 $font-montserrat: 'Montserrat', sans-serif;
 
 /* Màu tái sử dụng */

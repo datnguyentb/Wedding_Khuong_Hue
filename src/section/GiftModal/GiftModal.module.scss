@@ -250,3 +250,84 @@ $font-sans: 'Montserrat', sans-serif;
         transform: translateY(0);
     }
 }
+
+/* --- Section 2 Bao Lì Xì Đung Đưa --- */
+/* --- Section 2 Bao Lì Xì Đè Lên Nhau --- */
+.lixi-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin: 25px auto 10px;
+    position: relative;
+    height: 240px; // Cố định chiều cao để không bị lệch khung
+    &:hover {
+        z-index: 10 !important;
+        transform: scale(1.1) !important;
+    }
+
+    .lixi-item {
+        width: 120px; // Kích thước bao lì xì
+        position: absolute;
+        transition: transform 0.3s ease;
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+        }
+    }
+
+    /* Bao lì xì bên trái: Nằm đè lên trên và nghiêng sang trái */
+    .lixi-left {
+        z-index: 2; // Nằm đè lên bao bên phải
+        transform: translateX(-30px) rotate(-12deg); // Dịch sang trái và xoay nghiêng
+        animation: swingOverlapLeft 3.5s ease-in-out infinite;
+        transform-origin: bottom center;
+    }
+
+    /* Bao lì xì bên phải: Nằm ở dưới, nhỏ hơn chút và nghiêng sang phải */
+    .lixi-right {
+        z-index: 1; // Nằm ở lớp dưới
+        transform: translateX(25px) translateY(10px) rotate(10deg) scale(0.92); // Dịch sang phải, tụt xuống chút
+        animation: swingOverlapRight 4s ease-in-out infinite;
+        transform-origin: bottom center;
+    }
+}
+
+.lixi-hint {
+    font-family: $font-sans;
+    font-size: 14px;
+    font-weight: 600;
+    color: $gold-color;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    margin-top: 12px;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+/* Hiệu ứng đung đưa nhẹ nhàng khi đang đè lên nhau */
+@keyframes swingOverlapLeft {
+    0%,
+    100% {
+        transform: translateX(-30px) rotate(-12deg);
+    }
+    50% {
+        transform: translateX(-30px) rotate(-8deg);
+    }
+}
+
+@keyframes swingOverlapRight {
+    0%,
+    100% {
+        transform: translateX(25px) translateY(10px) rotate(10deg) scale(0.92);
+    }
+    50% {
+        transform: translateX(25px) translateY(10px) rotate(14deg) scale(0.92);
+    }
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import styles from './WeddiingCard.module.scss';
+import { FaHeart } from 'react-icons/fa';
 
 // ✅ Import trực tiếp ảnh để tránh lỗi đường dẫn tĩnh
 import flowerDecoration from '../../assets/images/flower2-decoration.webp';
@@ -60,7 +61,9 @@ function WeddiingCard({ setIsPlaying }) {
                         <img src={flowerDecoration} alt="Hoa trang trí" />
                     </div>
                     <div className={cx('cover-card-content')}>
-                        <div className={cx('heart-icon-circle')}>❤️</div>
+                        <div className={cx('heart-icon-circle')}>
+                            <FaHeart className={cx('heart-icon')} />
+                        </div>
                         <h2 className={cx('cover-names')}>
                             Văn Khương
                             <br />

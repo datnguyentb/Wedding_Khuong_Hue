@@ -16,6 +16,7 @@ import {
 } from './section';
 import { useState } from 'react';
 import BackgroundAudio from './section/backgroundAudio/backgroundAudio';
+import FloatingIcons from './components/Line/FloatingIcons/FloatingIcons.jsx';
 
 const cx = classNames.bind(styles);
 
@@ -25,27 +26,30 @@ function App() {
         <div>
             <WeddiingCard setIsPlaying={setIsPlaying} />
             <div id="container-cover" className={cx('main-content')}>
-                <BackgroundAudio isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
-                <HeroSection />
+                <div className={cx('background')}>
+                    <BackgroundAudio isPlaying={isPlaying} setIsPlaying={setIsPlaying} />
+                    <HeroSection />
+                    <FloatingIcons />
 
-                <div className={cx('group_1')}>
-                    <InvitationSection />
+                    <div className={cx('group_1')}>
+                        <InvitationSection />
 
-                    <WeddingEventDetails />
+                        <WeddingEventDetails />
 
-                    <WeddingCalendar />
-                    <VenueSection />
+                        <WeddingCalendar />
+                        <VenueSection />
 
-                    <RsvpSection />
+                        <RsvpSection />
+                    </div>
+
+                    <StoryGallerySection />
+
+                    <WishSection />
+
+                    <GiftModal />
+
+                    <ThankYouSection />
                 </div>
-
-                <StoryGallerySection />
-
-                <WishSection />
-
-                <GiftModal />
-
-                <ThankYouSection />
             </div>
         </div>
     );

@@ -23,6 +23,16 @@ function BackgroundAudio({ isPlaying, setIsPlaying }) {
         }
     }, [isPlaying, setIsPlaying]);
 
+    // 👇 THÊM ĐOẠN NÀY: Tự động phát tiếp khi currentIndex thay đổi (chuyển bài)
+    useEffect(() => {
+        if (!audioRef.current) return;
+        if (isPlaying) {
+            audioRef.current.play().catch((err) => {
+                console.log('Không thể tự động phát bài mới:', err);
+            });
+        }
+    }, [currentIndex, isPlaying]);
+
     // Chuyển bài tự động
     const handleEnded = () => {
         setCurrentIndex((prev) => (prev + 1) % songList.length);
