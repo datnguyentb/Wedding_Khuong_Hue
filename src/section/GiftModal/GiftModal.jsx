@@ -7,7 +7,7 @@ import qrGroomImg from '../../assets/images/qr.jpg';
 
 const cx = classNames.bind(styles);
 
-export const GiftModal = ({ downloadQR }) => {
+export const GiftModal = () => {
     // State quản lý trạng thái ẩn/hiện Popup
     const [isOpen, setIsOpen] = useState(false);
 
@@ -22,6 +22,16 @@ export const GiftModal = ({ downloadQR }) => {
         if (e.target === e.currentTarget) {
             handleClose();
         }
+    };
+
+    // Hàm xử lý tải ảnh QR trực tiếp
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = qrGroomImg;
+        link.download = 'QR_ChuRe_NguyenVanKhuong.jpg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
 
     return (
@@ -74,11 +84,7 @@ export const GiftModal = ({ downloadQR }) => {
                                 <p className={cx('qr-account')}>0211000512095</p>
                                 <p className={cx('qr-account-name')}>Nguyễn Văn Khương</p>
 
-                                <button
-                                    type="button"
-                                    className={cx('save-qr-btn')}
-                                    onClick={() => downloadQR && downloadQR('qrGroomImg', 'QR_ChuRe_NguyenVanKhuong')}
-                                >
+                                <button type="button" className={cx('save-qr-btn')} onClick={handleDownload}>
                                     <i className="fa-solid fa-download"></i> Tải QR
                                 </button>
                             </div>
