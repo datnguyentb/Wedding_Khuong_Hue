@@ -4,13 +4,12 @@ import doubleHappinessImg from '../../assets/images/囍.png';
 
 // Import cả 3 ảnh vào
 import coupleDefault from './../../assets/images/couple.jpg';
-import couple1 from './../../assets/images/couple_1.jpg';
 import couple2 from './../../assets/images/couple_2.jpg';
 
 const cx = classNames.bind(styles);
 
 // Mảng chứa danh sách các ảnh
-const coupleImages = [coupleDefault, couple1, couple2];
+const coupleImages = [coupleDefault, couple2];
 
 function HeroSection() {
     // Lấy ngẫu nhiên 1 ảnh từ mảng khi component render
