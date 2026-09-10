@@ -32,8 +32,21 @@ const RANDOM_WISHES = [
     'Chúc mừng ngày hạnh phúc nhất. Mong hai bạn mãi giữ được sự bao dung và thấu hiểu dành cho nhau. 💫',
 ];
 
+// 8 Lời chúc mẫu hiển thị mặc định ngay từ đầu (hoặc khi API lỗi/chậm)
+const INITIAL_FALLBACK_WISHES = [
+    { name: 'Minh Anh & Tuấn Kiệt', message: 'Chúc hai bạn trăm năm hạnh phúc, mãi yêu thương nhau như ngày đầu! 💍' },
+    { name: 'Gia Hân', message: 'Thuyền đã cập bến, chúc hai vợ chồng có hành trình mới thật viên mãn! ⚓️❤️' },
+    { name: 'Hoàng Long', message: 'Chúc tình yêu của hai bạn luôn bền chặt, cùng nhau đi đến cuối con đường. 🌸' },
+    { name: 'Phương Thảo', message: 'Hạnh phúc đơn giản là tìm đúng người. Chúc mừng ngày trọng đại của hai bạn! ✨' },
+    { name: 'Đức Mạnh', message: 'Chúc gia đình nhỏ luôn ngập tràn tiếng cười, yêu thương và tài lộc đong đầy! 💰' },
+    { name: 'Thùy Dương', message: 'Trăm năm tình viên mãn, bạc đầu nghĩa phu thê. Chúc mừng hạnh phúc! 🕊️' },
+    { name: 'Quang Huy', message: 'Mong rằng những bước đường tiếp theo hai bạn sẽ luôn có nhau che chở. 🤝' },
+    { name: 'Khánh Linh', message: 'Chúc cô dâu chú rể một đời an yên, luôn ngọt ngào và hạnh phúc! 🥰' },
+];
+
 export const WishSection = () => {
-    const [wishes, setWishes] = useState([]);
+    // Khởi tạo state wishes bằng 8 lời chúc mẫu luôn để không bị trống khi mới load
+    const [wishes, setWishes] = useState(INITIAL_FALLBACK_WISHES);
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -49,11 +62,12 @@ export const WishSection = () => {
             const res = await fetch(`${APPSCRIPT_URL}?t=${Date.now()}`);
             const result = await res.json();
 
+            // Chỉ thay thế bằng dữ liệu thật khi API trả về thành công và có dữ liệu
             if (result.success && result.data && result.data.length > 0) {
                 setWishes(result.data.slice(0, 30));
             }
         } catch (err) {
-            console.error('Lỗi tải lời chúc:', err);
+            console.error('Lỗi tải lời chúc, giữ nguyên dữ liệu mẫu:', err);
         }
     };
 
